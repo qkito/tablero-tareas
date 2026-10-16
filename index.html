@@ -20,12 +20,6 @@
         <input id="texto" type="text" placeholder="Escribe una tarea" required>
         <button type="submit">Agregar</button>
       </form>
-      function actualizarContador() {
-      const pendientes = tareas.filter(t => !t.hecha).length;
-      document.getElementById('contador').textContent = pendientes + ' tareas pendientes';
-    }
-    document.addEventListener('tareas:cambio', actualizarContador);
-    actualizarContador();
     </section>
 
     <section class="tareas">
