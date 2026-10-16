@@ -13,6 +13,7 @@
     
     <!-- Zona C: botón de tema -->
      <button id="tema" type="button">Tema oscuro</button>
+    <p id="contador">0 tareas pendientes</p>
   </header>
 
   <main>
@@ -21,7 +22,12 @@
         <input id="texto" type="text" placeholder="Escribe una tarea" required>
         <button type="submit">Agregar</button>
       </form>
-      <!-- Zona A: contador -->
+      function actualizarContador() {
+      const pendientes = tareas.filter(t => !t.hecha).length;
+      document.getElementById('contador').textContent = pendientes + ' tareas pendientes';
+    }
+    document.addEventListener('tareas:cambio', actualizarContador);
+    actualizarContador();
     </section>
 
     <section class="tareas">
